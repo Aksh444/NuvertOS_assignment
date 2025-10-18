@@ -15,6 +15,21 @@
            class="img"/>
     </div>
 
+  <!-- ✦ ADD: image URL editor (only when editing)
+    <div *ngIf="isEditing" class="img-editor">
+      <label class="field">
+        <span>Image URL</span>
+        <input type="url" [(ngModel)]="compound.image" placeholder="https://..."/>
+      </label>
+      <label class="field">
+        <span>Image attribution (optional)</span>
+        <input type="text" [(ngModel)]="compound.imageAttribution" placeholder="Source / author"/>
+      </label>
+      <small class="hint">Preview updates live above.</small>
+    </div>
+    <-- ✦ END ADD -->
+  
+
     <!-- right: content -->
     <div class="content">
       <h1 *ngIf="!isEditing" class="title">{{ compound.name }}</h1>
