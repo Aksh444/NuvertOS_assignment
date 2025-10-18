@@ -1,0 +1,68 @@
+.card-grid {
+    display: grid;
+    background-color: #e1e7e7;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    background-color: #ddd;
+    color: #605c5c;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 0 5px;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #0ee2ed;
+    color: white;
+    transform: scale(1.05);
+}
+
+.pagination button:disabled {
+    cursor: not-allowed;
+}
+
+.pagination .active {
+    background-color: #1c36f8;
+    color: white;
+    font-weight: bold;
+}
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    color: #ff4d4d;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.arrow:hover:not(:disabled) {
+    background-color:aqua;
+    color: #ff4d4d;
+}

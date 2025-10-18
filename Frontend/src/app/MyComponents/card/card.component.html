@@ -1,0 +1,21 @@
+
+<app-navbar></app-navbar>
+<div class="card-grid">
+    <div *ngFor="let card of cards">
+        <app-card-item [card]="card">
+        </app-card-item>
+    </div>
+</div>
+
+<div class="pagination">
+    <button class="arrow" (click)="previousPage()" [disabled]="currentPage === 1">
+        &lt; Prev
+    </button>
+    <button *ngFor="let page of [1, 2, 3]" [class.active]="currentPage === page" (click)="loadCompounds(page)">
+        {{ page }}
+    </button>
+
+    <button class="arrow" (click)="nextPage()" [disabled]="currentPage === totalPages">
+        Next &gt;
+    </button>
+</div>

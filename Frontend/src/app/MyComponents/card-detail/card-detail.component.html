@@ -1,0 +1,39 @@
+<div class="page">
+  <!-- top bar with Edit/Submit on the right -->
+  <header class="topbar">
+    <div></div>
+    <button (click)="toggleEdit()" class="edit-btn">
+      {{ isEditing ? 'Submit' : 'Edit' }}
+    </button>
+  </header>
+
+  <section *ngIf="compound; else loading" class="grid">
+    <!-- left: image -->
+    <div class="media">
+      <img [src]="compound.image"
+           alt="{{ compound.imageAttribution || compound.name }}"
+           class="img"/>
+    </div>
+
+    <!-- right: content -->
+    <div class="content">
+      <h1 *ngIf="!isEditing" class="title">{{ compound.name }}</h1>
+      <input *ngIf="isEditing"
+             [(ngModel)]="compound.name"
+             placeholder="Name"
+             class="title input"/>
+
+      <p *ngIf="!isEditing" class="desc">{{ compound.description }}</p>
+      <textarea *ngIf="isEditing"
+                [(ngModel)]="compound.description"
+                placeholder="Description"
+                class="desc textarea"></textarea>
+
+      <p class="stamp">Last modified: {{ compound.updatedAt }}</p>
+    </div>
+  </section>
+
+  <ng-template #loading>
+    <div class="loading">Loading compound details...</div>
+  </ng-template>
+</div>

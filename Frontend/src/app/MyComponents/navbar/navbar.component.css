@@ -1,0 +1,20 @@
+.nav {
+  color: rgb(0, 0, 0);
+  background-color: #408eed;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+}
+
+.logout-btn.logout-btn {
+  all:unset;background:#ef4444;
+  padding:8px 14px;
+  border-radius:6px;
+  color:#fff;
+  cursor:pointer;
+  font-weight:600
+}
+
+.logout-btn:hover{
+  background:#dc2626
+}
