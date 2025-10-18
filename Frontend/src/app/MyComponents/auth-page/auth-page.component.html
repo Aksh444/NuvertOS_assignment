@@ -1,0 +1,53 @@
+<div class="wrap">
+  <div class="card">
+    <div class="choice">
+      <p>Are you already registered?</p>
+      <div class="choice-btns">
+        <button class="chip" [class.active]="mode()==='login'" (click)="mode.set('login')">Yes, Log in</button>
+        <button class="chip" [class.active]="mode()==='register'" (click)="mode.set('register')">No, Register</button>
+      </div>
+    </div>
+
+    <h1 class="title">{{ mode()==='login' ? 'Welcome back' : 'Create account' }}</h1>
+    <p class="subtitle">{{ mode()==='login' ? 'Access your dashboard' : 'Start using the app in seconds' }}</p>
+
+    <form (ngSubmit)="submit()" class="form" novalidate>
+      <label class="field">
+        <span>Email</span>
+        <input type="email" [(ngModel)]="email" name="email" autocomplete="email" required />
+      </label>
+
+      <label class="field">
+        <span>Password</span>
+        <div class="password">
+          <input [type]="show?'text':'password'" [(ngModel)]="password" name="password" autocomplete="current-password" required minlength="6" />
+          <button type="button" class="toggle" (click)="show=!show" aria-label="Toggle password visibility">{{ show ? 'Hide' : 'Show' }}</button>
+        </div>
+      </label>
+
+      <label *ngIf="mode()==='register'" class="field">
+        <span>Confirm password</span>
+        <input [type]="show?'text':'password'" [(ngModel)]="confirm" name="confirm" required minlength="6" autocomplete="new-password" />
+      </label>
+
+      <div class="hints">
+        <span *ngIf="password && password.length<6" class="error">Min 6 characters.</span>
+        <span *ngIf="mode()==='register' && confirm && confirm!==password" class="error">Passwords don’t match.</span>
+        <span *ngIf="error" class="error">{{ error }}</span>
+      </div>
+
+      <button class="primary" [disabled]="!canSubmit" type="submit">
+        {{ mode()==='login' ? 'Login' : 'Register' }}
+      </button>
+
+      <button type="button" class="ghost switch" (click)="switchMode()">
+        {{ mode()==='login' ? 'New here? Create an account' : 'Have an account? Log in' }}
+      </button>
+    </form>
+  </div>
+
+  <aside class="side">
+    <h2>Chemistry</h2>
+    <p>A study of chemical compunds !</p>
+  </aside>
+</div>
