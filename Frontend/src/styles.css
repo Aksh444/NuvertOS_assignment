@@ -3,3 +3,6 @@
     margin: 0;
     padding: 0;
 }
+
+
+body {background: #e9eef6; } /* match your :host bg */

@@ -1,6 +1,12 @@
 <div class="nav">
-    <h1>Chemical Compounds</h1>
-    @if (loggedIn){
-        <button (click)="logout()" class="logout-btn">Logout</button>
-    }  
+  <div class="nav-left">
+    <img src="favicon.ico" alt="Chemistry Logo" class="logo" />
+    <h1 class="title">Chemical Compounds</h1>
+  </div>
+
+  <div class="nav-right">
+    @if (loggedIn) {
+      <button (click)="logout()" class="logout-btn">Logout</button>
+    }
+  </div>
 </div>

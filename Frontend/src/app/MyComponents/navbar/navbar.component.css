@@ -1,20 +1,70 @@
 .nav {
-  color: rgb(0, 0, 0);
-  background-color: #408eed;
-  padding: 10px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
   position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
 }
 
-.logout-btn.logout-btn {
-  all:unset;background:#ef4444;
-  padding:8px 14px;
-  border-radius:6px;
-  color:#fff;
-  cursor:pointer;
-  font-weight:600
+/* left section */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.logout-btn:hover{
-  background:#dc2626
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: white;
+  padding: 4px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* right section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logout-btn {
+  all: unset;
+  cursor: pointer;
+  background: #ef4444;
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* Optional sticky backdrop effect */
+.nav::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  opacity: 0.4;
+  z-index: -1;
 }
