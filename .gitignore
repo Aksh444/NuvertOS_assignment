@@ -1,0 +1,61 @@
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+
+# ---- Node/JS general ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json.*   # keep the lockfile itself tracked (do NOT ignore package-lock.json)
+
+# ---- Builds / caches ----
+dist/
+build/
+.temp/
+.tmp/
+.cache/
+coverage/
+.nyc_output/
+
+# ---- Angular (Frontend) ----
+.angular/
+Frontend/dist/
+Frontend/.angular/
+Frontend/.cache/
+# Angular environment files are usually tracked (environment.ts).
+# If you keep secrets there, rename and track an example instead.
+
+# ---- Express/Node (Backend) ----
+Backend/dist/
+Backend/build/
+
+# ---- Environment & secrets (track only examples) ----
+# Keep .env.example committed; ignore real env files anywhere in the repo
+**/.env
+**/.env.*        # .env.local, .env.development, etc.
+!**/.env.example
+
+# ---- Logs & runtime ----
+**/*.log
+logs/
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ---- IDE/editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Optional: images or data dumps too large to commit ----
+# dumps/
+# *.sql
+# *.sqlite
+
+# ---- Optional: misc ----
+# .eslintcache
+# .stylelintcache
